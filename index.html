@@ -1,31 +1,38 @@
 <html>
 <head>
-	<title></title>
+	<title>Spotify Player</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="widget">
+		<form>
+			<input type="text" id="search-input">
+			<button type="submit" id="search-button" class="btn" value="imagine">Search</button>
+		</form>
 		<div class="header">
-		<!-- Try adding/removing these classes: -->
-		<!-- disabled -->
-		<!-- playing -->
-		<div class="btn-play disabled"></div>
+			<!-- Try adding/removing these classes: -->
+			<!-- disabled -->
+			<!-- playing -->
+			<div id="play-button" class="btn-play"></div>
 
-		<div class="metadata">
-		  <p class="title">Hunger of The Pine</p>
-		  <p class="author">alt-J</p>
+			<div class="metadata">
+				<p class="title title-of-song">Hunger of The Pine</p>
+				<p class="author artist">alt-J</p>
 
-		  <div class="seekbar">
-		    <progress value="5" max="30"></progress>
-		  </div>
+				<div id="seekbar" class="seekbar">
+					<progress value="5" max="30"></progress>
+				</div>
+			</div>
 		</div>
+		<div class="cover showCover">
+			<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
 		</div>
-		<div class="cover">
-		<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
-		</div>
-
-		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+		<div id="js-player"></div>
+		<audio id="songToPlay"></audio>
 	</div>
-
+	<script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
